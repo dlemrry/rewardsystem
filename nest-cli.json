@@ -19,6 +19,24 @@
         "tsConfigPath": "apps/auth/tsconfig.app.json"
       }
     },
+    "common": {
+      "type": "library",
+      "root": "libs/common",
+      "entryFile": "index",
+      "sourceRoot": "libs/common/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/common/tsconfig.lib.json"
+      }
+    },
+    "entity": {
+      "type": "library",
+      "root": "libs/entity",
+      "entryFile": "index",
+      "sourceRoot": "libs/entity/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/entity/tsconfig.lib.json"
+      }
+    },
     "event": {
       "type": "application",
       "root": "apps/event",
