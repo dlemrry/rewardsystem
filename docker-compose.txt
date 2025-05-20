@@ -1,0 +1,58 @@
+version: '3.9'
+services:
+  mongo:
+    image: mongo:6.0
+    container_name: mongo
+    ports:
+      - '27017:27017'
+    healthcheck:
+      test: ['CMD', 'mongosh', '--quiet', '--eval', "db.adminCommand('ping')"]
+      interval: 2s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - mongo_data:/data/db
+
+  # 한번 빌드
+  base:
+    build:
+      context: .
+      dockerfile: dockerfile
+    depends_on:
+      mongo:
+        condition: service_healthy
+    image: basebuild
+
+  # 빌드된 이미지 사용하여 실행만 함
+  auth:
+    image: basebuild
+    depends_on:
+      mongo:
+        condition: service_healthy
+    command: ['node', '-r', 'tsconfig-paths/register', 'dist/apps/auth/main.js']
+    # command: ['node', 'dist/apps/auth/src/main.js']
+    ports:
+      - '3001:3000'
+
+  event:
+    image: basebuild
+    depends_on:
+      mongo:
+        condition: service_healthy
+    command:
+      ['node', '-r', 'tsconfig-paths/register', 'dist/apps/event/src/main.js']
+    ports:
+      - '3002:3000'
+
+  gateway:
+    image: basebuild
+    depends_on:
+      mongo:
+        condition: service_healthy
+    command:
+      ['node', '-r', 'tsconfig-paths/register', 'dist/apps/gateway/src/main.js']
+    ports:
+      - '3003:3000'
+
+volumes:
+  mongo_data:

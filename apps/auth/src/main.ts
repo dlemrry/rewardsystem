@@ -1,4 +1,4 @@
-// import 'tsconfig-paths/register';
+import 'tsconfig-paths/register';
 import { NestFactory, Reflector } from '@nestjs/core';
 import { AuthModule } from './auth.module';
 import { JwtAuthGuard } from '@app/common/guards/jwt.guard';
