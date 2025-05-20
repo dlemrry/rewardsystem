@@ -1,5 +1,13 @@
 version: '3.9'
 services:
+  mongo:
+    image: mongo:6.0
+    container_name: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo_data:/data/db
+
   # 한번 빌드
   base:
     build:
@@ -25,3 +33,6 @@ services:
     command: ['node', 'dist/apps/gateway/src/main.js']
     ports:
       - '3003:3000'
+
+volumes:
+  mongo_data:
