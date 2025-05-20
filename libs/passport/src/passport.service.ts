@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
-import { JwtPayloadDto } from 'libs/common/dtos/jwt.dto';
+import { JwtPayloadDto } from '@app/common/dtos/jwt.dto';
 import { User, UserDocument } from '@app/database/schema/user.schema';
 
 @Injectable()

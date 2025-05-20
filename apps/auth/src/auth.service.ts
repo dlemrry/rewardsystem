@@ -7,9 +7,9 @@ import {
 import { AuthRepository } from './auth.repository';
 import * as bcrypt from 'bcrypt';
 import { PassportService } from '@app/passport';
-import { JwtPayloadDto } from 'libs/common/dtos/jwt.dto';
-import { SignInDto } from 'libs/common/dtos/auth/signIn.dto';
-import { SignUpDto } from 'libs/common/dtos/auth/signUp.dto';
+import { JwtPayloadDto } from '@app/common/dtos/jwt.dto';
+import { SignInDto } from '@app/common/dtos/auth/signIn.dto';
+import { SignUpDto } from '@app/common/dtos/auth/signUp.dto';
 
 @Injectable()
 export class AuthService {

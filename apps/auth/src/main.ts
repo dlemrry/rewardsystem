@@ -1,6 +1,7 @@
+// import 'tsconfig-paths/register';
 import { NestFactory, Reflector } from '@nestjs/core';
 import { AuthModule } from './auth.module';
-import { JwtAuthGuard } from 'libs/common/guards/jwt.guard';
+import { JwtAuthGuard } from '@app/common/guards/jwt.guard';
 import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {

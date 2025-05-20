@@ -1,5 +1,5 @@
 import { IsEmail, IsEnum, IsIn, IsString } from 'class-validator';
-import { Role } from 'libs/common/types/roles.enum';
+import { Role } from '@app/common/types/roles.enum';
 
 export class SignUpDto {
   @IsEmail()

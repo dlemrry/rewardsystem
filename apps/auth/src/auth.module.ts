@@ -10,7 +10,7 @@ import { ConfigService } from '@nestjs/config';
 import { PassportModule } from '@app/passport';
 import { AuthRepository } from './auth.repository';
 import { APP_GUARD } from '@nestjs/core';
-import { JwtAuthGuard } from 'libs/common/guards/jwt.guard';
+import { JwtAuthGuard } from '@app/common/guards/jwt.guard';
 
 @Module({
   imports: [

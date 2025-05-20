@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { SignUpDto } from 'libs/common/dtos/auth/signUp.dto';
+import { SignUpDto } from '@app/common/dtos/auth/signUp.dto';
 import { User, UserDocument } from '@app/database/schema/user.schema';
 import { Model } from 'mongoose';
 

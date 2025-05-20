@@ -69,6 +69,7 @@
     }
   },
   "compilerOptions": {
-    "webpack": true
+    "webpack": true,
+    "tsConfigPath": "tsconfig.build.json"
   }
 }
