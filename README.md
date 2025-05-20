@@ -6,10 +6,12 @@ nexon homework
 
 (현재 auth 서버만 구현한 상태입니다.)
 
-nest  
+### nest
+
 nest start auth
 
-도커 (현재 안됨)  
+### 도커 (현재 안됨)
+
 docker-compose build --no-cache  
 docker-compose up
 
