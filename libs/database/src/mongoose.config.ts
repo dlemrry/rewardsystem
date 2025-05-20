@@ -11,7 +11,8 @@ export const mongooseConfig: MongooseModuleAsyncOptions = {
     const port = configService.get<string>('database.port');
     const dbName = configService.get<string>('database.dbName');
 
-    const uri = `mongodb://${username}:${password}@127.0.0.1:${port}/${dbName}`;
+    // const uri = `mongodb://${username}:${password}@127.0.0.1:${port}/${dbName}`;
+    const uri = `mongodb://127.0.0.1:${port}/${dbName}`;
 
     return {
       uri,
