@@ -1,6 +1,3 @@
-# rewardsystem
-
-nexon homework
 
 ## 실행방법
 
